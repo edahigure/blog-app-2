@@ -5,7 +5,7 @@ RSpec.describe Post, type: :model do
                            posts_counter: 0)
 
   subject do
-    Post.create(author: first_user, title: 'Hello', text: 'This is my first post', comments_counter: 0,
+    Post.create(author: first_user, title: 'Hello', text: 'This is my first post !', comments_counter: 0,
                 likes_counter: 0)
   end
 
