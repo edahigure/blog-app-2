@@ -5,7 +5,7 @@ RSpec.describe Like, type: :model do
                            posts_counter: 0)
 
   first_post = Post.create(author: first_user, title: 'Hello', text: 'This is my first post', comments_counter: 0,
-                           likes_counter: 0)
+                           likes_counter: 1)
 
   subject { Like.create(author: first_user, post: first_post) }
 
