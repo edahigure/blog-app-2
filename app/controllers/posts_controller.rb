@@ -11,8 +11,11 @@ class PostsController < ApplicationController
     @users = User.all
     @id = params[:id]
 
-    redirect_to action: 'index', status: 302 unless (@post = Post.where(id: @id).first)
+    unless (@post = Post.where(id: @id).first)
+      redirect_to action: 'index', status: 302
+      return
+    end
 
-    @comments = Comment.where(post_id: @id)
+    @comments = @post.recent_comments
   end
 end

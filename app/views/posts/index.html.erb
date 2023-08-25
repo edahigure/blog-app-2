@@ -11,7 +11,7 @@
   
     <% @posts.each do |post| %>
       <div class= "container-column-2"> 
-          <div class="item">Post # <%= post.id %>  <%= post.title %> </div>
+          <div class="item">Post # <%= post.id %> <%= link_to post.title, user_post_path(post.author_id,post.id) %> </div>
           <div class="item"> <%= post.text %> </div>
 
           <div class="container-2">               

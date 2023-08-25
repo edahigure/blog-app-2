@@ -5,10 +5,12 @@ class UsersController < ApplicationController
 
   def show
     @id = params[:id]
-    @posts = Post.all
 
-    return if (@user = User.where(id: @id).first)
+    unless (@user = User.where(id: @id).first)
+      redirect_to action: 'index', status: 302
+      return
+    end
 
-    redirect_to action: 'index', status: 302
+    @posts = @user.recent_posts
   end
 end

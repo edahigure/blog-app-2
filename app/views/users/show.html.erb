@@ -15,20 +15,19 @@
     
     <% @posts.each do |post| %>
         <div class= "container-column-2"> 
-            <div class="item">Post # <%= post.id %>  <%= post.title %> </div>
+            <div class="item">Post # <%= post.id %> <%= link_to post.title, user_post_path(post.author_id,post.id) %> </div>
             <div class="item"> <%= post.text %> </div>
 
             <div class="container-2">               
-              <div>Comments: <%= post.comments_counter %> </div>
-              <div>likes: <%= post.likes_counter %> </div>
+              <div>Comments: <%= post.comments_counter || 0 %> </div>
+              <div>likes: <%= post.likes_counter || 0 %> </div>
             </div>
         </div>
     <% end %>
 
 
-    
-
-    <button type="button" class="button-1">See all posts</button>
+    <div class="button-1">
+    <%= button_to "See all posts", user_post_path(@id), :method => "get" %>
+    </div>
   
-    
 </end>

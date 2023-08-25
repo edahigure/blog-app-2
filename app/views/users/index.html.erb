@@ -4,7 +4,9 @@
     <li class="item">  
        <img class="photo" src="<%= user.photo%>" alt="user photo">
        <div class= "container"> 
-          <div class="name"> <%= user.name %> </div>
+
+        
+          <div class="name"> <%= link_to user.name, user_path(user.id) %> </div>
           <div class="post-num"> number of posts: <%= user.posts_counter %></div>
        </div>
     </li>
