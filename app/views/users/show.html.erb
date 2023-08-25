@@ -1,2 +1,34 @@
 <h1> This is users page <%= @id %> </h1>
 
+<div class="wrapper-1">
+    <li class="item">  
+       <img class="photo" src="<%= @user.photo%>" alt="user photo">
+       <div class= "container"> 
+          <div class="name"> <%= @user.name %> </div>
+          <div class="post-num"> number of posts: <%= @user.posts_counter %></div>
+       </div>
+    </li>
+    <div class="container-column-2"> 
+      <div class="bio"> Bio </div>
+       <%= @user.bio %>
+    </div>
+    
+    <% @posts.each do |post| %>
+        <div class= "container-column-2"> 
+            <div class="item">Post # <%= post.id %>  <%= post.title %> </div>
+            <div class="item"> <%= post.text %> </div>
+
+            <div class="container-2">               
+              <div>Comments: <%= post.comments_counter %> </div>
+              <div>likes: <%= post.likes_counter %> </div>
+            </div>
+        </div>
+    <% end %>
+
+
+    
+
+    <button type="button" class="button-1">See all posts</button>
+  
+    
+</end>

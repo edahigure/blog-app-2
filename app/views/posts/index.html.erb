@@ -1,1 +1,33 @@
 <h1> This is posts page index </h1>
+
+<div class="wrapper-1">
+    <li class="item">  
+       <img class="photo" src="<%= @user.photo%>" alt="user photo">
+       <div class= "container"> 
+          <div class="name"> <%= @user.name %> </div>
+          <div class="post-num"> number of posts: <%= @user.posts_counter %></div>
+       </div>
+    </li>
+  
+    <% @posts.each do |post| %>
+      <div class= "container-column-2"> 
+          <div class="item">Post # <%= post.id %>  <%= post.title %> </div>
+          <div class="item"> <%= post.text %> </div>
+
+          <div class="container-2">               
+            <div>Comments: <%= post.comments_counter %> </div>
+            <div>likes: <%= post.likes_counter %> </div>
+          </div>
+      </div>
+  
+      <div class= "container-column-2"> 
+        <% com =  @comments.where(post_id: post.id) %>
+        <% if com!= nil  %>
+            <% com.each do |comment|  %>
+            <div> <%= @users.find(comment.author_id).name %>:  <%= comment.text %> </div>
+            <% end %>
+        <% end %>        
+      </div>
+    <% end %>
+    <button type="button" class="button-1">Pagination</button>
+</end>
