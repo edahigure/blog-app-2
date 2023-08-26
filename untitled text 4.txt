@@ -1,0 +1,78 @@
+rails generate model User name:string photo:string bio:text posts_counter:integer 
+rails generate model Post title:string text:text likes_counter:integer comments_counter:integer 
+rails generate model Comment user:references:index post:references:index text:text 
+rails generate model Like user:references:index post:references:index 
+
+
+
+rails generate migration AddAuthorRefToPosts author:references
+rails generate migration AddAuthorToPosts author:string:index
+
+
+rails g migration RenameColumnName
+
+
+
+
+
+first_user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/iFgRcqHznqg', bio: 'Teacher from Mexico.')
+second_user = User.create(name: 'Lilly', photo: 'https://unsplash.com/photos/7mBictB_urk', bio: 'Teacher from Poland.')
+third_user = User.create(name: 'John', photo: 'https://unsplash.com/photos/tylto1g8Wbg', bio: 'Teacher from Argentina.')
+fourth_user = User.create(name: ‘Miriam’, photo: 'https://img.freepik.com/free-photo/young-beautiful-woman-looking-camera-trendy-girl-casual-summer-white-t-shirt-jeans-shorts-positive-female-shows-facial-emotions-funny-model-isolated-yellow_158538-15796.jpg?w=740&t=st=1692894104~exp=1692894704~hmac=75337d2cd670ca6ecf45532673df587947441acfb64c89d9b2f04f8ae616fc10', bio: 'Teacher from Colombia.’)
+
+first_post = Post.create(author: first_user, title: 'Hello', text: 'This is my first post')
+second_post = Post.create(author: second_user, title: 'Hello-2', text: 'This is my second post')
+third_post = Post.create(author: third_user, title: 'Hello-3', text: 'This is my third post')
+fourth_post = Post.create(author: first_user, title: 'Hello-4', text: 'This is my fourth post')
+
+
+Comment.create(post: first_post, author: second_user, text: 'Hi Tom!' )
+Comment.create(post: first_post, author: third_user, text: 'How are You!' )
+
+User.recent_posts
+
+first_user=User.find(11)
+second_user=User.find(12)
+third_user=User.find(13)
+
+
+
+
+
+<h1> This is posts page index </h1>
+
+<div class="wrapper-1">
+    <li class="item">  
+       <img class="photo" src="<%= @user.photo%>" alt="user photo">
+       <div class= "container"> 
+          <div class="name"> <%= @user.name %> </div>
+          <div class="post-num"> number of posts: <%= @user.posts_counter %></div>
+       </div>
+    </li>
+  
+    
+    <% @posts.each do |post| %>
+      <div class= "container-column-2"> 
+          <div class="item">Post # <%= post.id %>  <%= post.title %> </div>
+          <div class="item"> <%= post.text %> </div>
+
+          <div class="container-2">               
+            <div>Comments: <%= post.comments_counter %> </div>
+            <div>likes: <%= post.likes_counter %> </div>
+          </div>
+      </div>
+
+      post_comments (post.id)
+
+      <% @comments.each do |comment| %>
+        <div class="container-2">
+          <% author = User.find(author_id: comment.author_id) %>
+          <div>author: <%= author %> </div>
+          <div>Comments: <%= comment %> </div>
+          
+        </div>
+      <% end %>
+
+  <% end %>
+    
+</end>
