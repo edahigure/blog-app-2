@@ -4,11 +4,11 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  get 'welcome/home', to: 'welcome#home'
-  #get "/users/:id", to: "users#show"
-
   resources :users do
-    resources :posts
+    resources :posts do
+      resources :comments
+      resources :likes
+    end
   end
 
 end

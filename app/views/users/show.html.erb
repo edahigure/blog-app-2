@@ -19,8 +19,8 @@
             <div class="item"> <%= post.text %> </div>
 
             <div class="container-2">               
-              <div>Comments: <%= post.comments_counter || 0 %> </div>
-              <div>likes: <%= post.likes_counter || 0 %> </div>
+              <div> <%= link_to 'Comments:', new_user_post_comment_url(post.author_id,post.id) %> : <%= post.comments_counter || 0 %> </div>
+              <div>  <%= link_to 'Likes', user_post_likes_path(post.author_id,post.id) %> : <%= post.likes_counter || 0 %> </div>
             </div>
         </div>
     <% end %>

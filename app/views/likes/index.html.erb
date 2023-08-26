@@ -1,0 +1,5 @@
+<h1> Do you like the post? ... <%= current_user.name %>  </h1> 
+
+<%= form_with url: user_post_likes_url   do |f| %>
+  <%= f.submit %>
+<% end %>

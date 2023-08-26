@@ -1,4 +1,4 @@
-<h1> This is posts page index </h1>
+<h1> This is posts page index .. <% @current_user %> </h1>
 
 <div class="wrapper-1">
     <li class="item">  
@@ -15,8 +15,8 @@
           <div class="item"> <%= post.text %> </div>
 
           <div class="container-2">               
-            <div>Comments: <%= post.comments_counter %> </div>
-            <div>likes: <%= post.likes_counter %> </div>
+            <div><%= link_to 'comments:', new_user_post_comment_url(post.author_id,post.id) %>  <%= post.comments_counter %> </div>
+            <div><%= link_to 'Likes', user_post_likes_path(post.author_id,post.id) %> : <%= post.likes_counter %> </div>
           </div>
       </div>
   
