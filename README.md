@@ -88,8 +88,11 @@ In the project directory, you can run:
 
 To fix all Linter error automatically
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+## Run the tests
 
+rspec ./spec/integration/file name_spec.rb
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- AUTHOR -->
 
 ## 👥 Author <a name="authors"></a>
