@@ -102,6 +102,13 @@ To fix all Linter error automatically
 - Twitter: [@edahigure](https://twitter.com/edahigure)
 - LinkedIn: [edahigure](https://www.linkedin.com/in/edahigure/)
 
+👤 **Therese Tuyisabe**
+
+- GitHub: [@theresetuyi](https://github.com/theresetuyi)
+- Twitter: [@THERESETUYISAB2](https://twitter.com/THERESETUYISAB2)
+- LinkedIn: [therese-tuyisabe](https://www.linkedin.com/in/therese-tuyisabe/)
+
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>

@@ -10,7 +10,6 @@ class PostsController < ApplicationController
   def show
     @users = User.all
     @id = params[:id]
-    current_user
     unless (@post = Post.where(id: @id).first)
       redirect_to action: 'index', status: 302
       return

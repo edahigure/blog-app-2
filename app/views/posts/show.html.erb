@@ -7,7 +7,7 @@
       <div class= "container-column-2"> 
           <div class="container-3">
             <div>
-              Post # <%= @post.id %>  by  <%=@users.find( @post.author_id ).name %> 
+              Post: <%= @post.title %>  by  <%=@users.find( @post.author_id ).name %> 
             </div>
 
             <div class="container-2">               
@@ -22,10 +22,10 @@
       </div>
   
       <div class= "container-column-2"> 
-        <% com =  @comments.where(post_id: @id) %>
+        <% com =  @comments.includes(:author).where(post_id: @id) %>
         <% if com!= nil  %>
             <% com.each do |comment|  %>
-            <div> <%= @users.find(comment.author_id).name %>:  <%= comment.text %> </div>
+            <div> <%= comment.author.name %>:  <%= comment.text %> </div>
             <% end %>
         <% end %>        
       </div>
