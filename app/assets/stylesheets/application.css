@@ -99,3 +99,20 @@
   display: flex;
   justify-content: space-between;
 }
+
+.button {
+  text-decoration: none;
+  background-color: #eee;
+  color: #333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #ccc;
+  border-right: 1px solid #333;
+  border-bottom: 1px solid #333;
+  border-left: 1px solid #ccc;
+  width: 150px;
+  height: 40px;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
