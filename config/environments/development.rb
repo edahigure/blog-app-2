@@ -1,6 +1,8 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+  config.hosts = nil
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded any time
@@ -75,7 +77,7 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     user_name:      'edahigure@gmail.com',
-    password:       '12341234',
+    password:       'yphqktwjccosxasp',
     domain:         'localhost:3000',
     address:       'smtp.gmail.com',
     port:          '587',
