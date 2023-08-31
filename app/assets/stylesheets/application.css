@@ -133,3 +133,8 @@
   align-items: center;
   flex: 1;
 }
+
+.email-intro {
+  width:100%;
+}
+
