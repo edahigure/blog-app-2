@@ -19,5 +19,4 @@ class Comment < ApplicationRecord
     post.comments_counter = post.comments_counter - 1
     post.save
   end
-
 end

@@ -18,11 +18,11 @@ class User < ApplicationRecord
   after_create :check_posts_counter
 
   def admin?
-    self.role == 'admin'
+    role == 'admin'
   end
 
   def user?
-    self.role == 'user' || self.role == nil 
+    role == 'user' || role.nil?
   end
 
   private

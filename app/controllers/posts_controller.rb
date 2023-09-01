@@ -29,12 +29,11 @@ class PostsController < ApplicationController
     @post.save
     redirect_to users_path
   end
+
   def destroy
-    
     @post = Post.find(params[:id])
     @post.destroy
-    flash[:success] = "The post item was successfully destroyed."
+    flash[:success] = 'The post item was successfully destroyed.'
     redirect_to user_post_url(current_user.id)
-    
   end
 end
