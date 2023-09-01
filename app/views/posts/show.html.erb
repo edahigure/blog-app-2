@@ -34,9 +34,7 @@
         <% if com!= nil  %>
             <% com.each do |comment|  %>
             <div> <%= comment.author.name %>:  <%= comment.text %> 
-              <% if can? :destroy, comment %>
-
-              <%= link_to 'Delete', user_post_comment_path(current_user.id,@id,comment.id), :class => 'navbar-link' %> 
+              <% if can? :destroy, comment %>        
 
               <%= button_to(
                 "Delete",
