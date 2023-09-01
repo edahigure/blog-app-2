@@ -91,6 +91,10 @@ by
 config.mailer_sender = 'edahigure@gmail.com'    
 
 
+Watch this useful video to know how to configure an email confirmation in rails
+
+https://www.youtube.com/watch?v=sVJRkTxqlSQ
+
 ## 💻 Getting Started <a name="getting-started"></a>
 
 To get a local copy up and use as a template, follow these steps.
