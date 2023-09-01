@@ -17,7 +17,15 @@
 
           </div>
           <div class="item"> <%= @post.text %> </div>
+          <% if can? :destroy, @post %>
 
+          <%= button_to(
+            "Delete Post",
+            user_post_path(@post.id),
+            method: :delete
+          ) %>
+          
+          <%end%>
           
       </div>
   
