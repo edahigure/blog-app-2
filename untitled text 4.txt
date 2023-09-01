@@ -15,9 +15,12 @@ rails g migration RenameColumnName
 
 
 
-first_user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/iFgRcqHznqg', bio: 'Teacher from Mexico.')
-second_user = User.create(name: 'Lilly', photo: 'https://unsplash.com/photos/7mBictB_urk', bio: 'Teacher from Poland.')
-third_user = User.create(name: 'John', photo: 'https://unsplash.com/photos/tylto1g8Wbg', bio: 'Teacher from Argentina.')
+first_user = User.create(name: 'Tom', photo: 'https://www.freepik.com/free-photo/close-up-portrait-curly-handsome-european-male_8757475.htm#query=people%20face%20man&position=14&from_view=search&track=ais', bio: 'Teacher from Mexico.')
+
+second_user = User.create(name: 'Lilly', photo: 'https://img.freepik.com/free-photo/portrait-expressive-young-woman_1258-48167.jpg?w=740&t=st=1692885490~exp=1692886090~hmac=5b08761cf2c35c7bee71baa306e219242976590fff712feee2acedcb690ab414', bio: 'Teacher from Poland.')
+
+third_user = User.create(name: 'John', photo: 'https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?w=740&t=st=1693421639~exp=1693422239~hmac=f4525ba37b35e0ce84e82b741aa1e436d5c0d94b673e6fb20314aa2a4ecee8ac', bio: 'Teacher from Argentina.')
+
 fourth_user = User.create(name: ‘Miriam’, photo: 'https://img.freepik.com/free-photo/young-beautiful-woman-looking-camera-trendy-girl-casual-summer-white-t-shirt-jeans-shorts-positive-female-shows-facial-emotions-funny-model-isolated-yellow_158538-15796.jpg?w=740&t=st=1692894104~exp=1692894704~hmac=75337d2cd670ca6ecf45532673df587947441acfb64c89d9b2f04f8ae616fc10', bio: 'Teacher from Colombia.’)
 
 first_post = Post.create(author: first_user, title: 'Hello', text: 'This is my first post')

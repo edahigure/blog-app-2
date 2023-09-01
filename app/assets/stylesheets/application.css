@@ -116,3 +116,24 @@
   justify-content: center;
   align-items: center;
 }
+
+.wrapper-intro {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px;
+  border: solid black 1px;
+}
+
+.field {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 1;
+}
+
+.email-intro {
+  width: 100%;
+}
