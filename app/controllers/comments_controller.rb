@@ -13,4 +13,13 @@ class CommentsController < ApplicationController
     @comment.save
     redirect_to user_posts_path
   end
+  def destroy
+    
+    post_id=params[:post_id]
+    id=params[:id]
+    @comment = Comment.find(id)
+    @comment.destroy
+    flash[:success] = "The to-do item was successfully destroyed."
+    redirect_to user_post_url(current_user.id,post_id) 
+  end
 end
