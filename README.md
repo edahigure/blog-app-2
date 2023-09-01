@@ -32,12 +32,17 @@
 
 ## 🛠 Built With <a name="built-with"></a>
 
+Ruby on Rails
+
 ### Tech Stack <a name="tech-stack"></a>
 
 <details>
   <summary>Client</summary>
   <ul>
     <li><a href="https://en.wikipedia.org/wiki/Ruby_(programming_language)">Ruby</a></li>
+<li><a href="https://guides.rubyonrails.org/active_record_basics.html#what-is-active-record-questionmark">Active Record Basics
+</a></li>
+
   </ul>
 </details>
 
@@ -62,7 +67,14 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Getting Started
+To get a local copy up and running follow these simple example steps.
+
 ### Prerequisites (an email account)
+
+in order to run this project you need:
+
+gem install rails
 
 To run this application you need an email account properly configured. You need the 2-step verification for your gmail account for example as is done here:
 
@@ -94,22 +106,14 @@ config.mailer_sender = 'edahigure@gmail.com'
 Watch this useful video to know how to configure an email confirmation in rails
 
 https://www.youtube.com/watch?v=sVJRkTxqlSQ
-
-## 💻 Getting Started <a name="getting-started"></a>
-
-To get a local copy up and use as a template, follow these steps.
-
-### Clone <a name="clone"></a>
+### Clone <a name="clone"> Setup</a>
 
 Clone this repository to your desired folder:
 
 ```sh
   git clone https://github.com/edahigure/blog-app.git
 ```
-
 To install the necessary dependencies, you should run:
-
-### `gem install bundler`
 
 ### `bundler install`
 
@@ -124,13 +128,16 @@ To fix all Linter error automatically
 ## Run the tests
 
 rspec ./spec/integration/file name_spec.rb
+## Usage 
+
+To run the project, execute the following command:
+
+  rails server
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- AUTHOR -->
 
 ## 👥 Author <a name="authors"></a>
-
-
 
 👤 **Edahi Antonio Gutiérrez Reyes**
 
@@ -149,7 +156,9 @@ rspec ./spec/integration/file name_spec.rb
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **UI**
+- Adding feature to create Accounts
+- Adding Feature to Create posts
+- Adding Feature to Interact with Likes and Comments
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
