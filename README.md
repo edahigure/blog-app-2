@@ -64,7 +64,7 @@
 
 ### Prerequisites (an email account)
 
-To run this appplication you need an email account properly configured. You need the 2-step verification for your gmail account for example as is done here:
+To run this application you need an email account properly configured. You need the 2-step verification for your gmail account for example as is done here:
 
 https://help.warmupinbox.com/en/articles/4934806-configure-for-google-workplace-with-two-factor-authentication-2fa
 
