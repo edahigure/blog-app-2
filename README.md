@@ -146,6 +146,11 @@ GET http://127.0.0.1:3000/api/v1/users/:id/posts/:id/comments
 POST http://127.0.0.1:3000/api/v1/users/:id/posts/:id/comments
 
 
+We followed this tutorial to build the endpoints for the Api
+
+https://dev.to/nemwelboniface/api-with-rails-7-ngh
+
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- AUTHOR -->
