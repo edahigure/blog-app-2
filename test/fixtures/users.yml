@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  photo: MyString
-  bio: MyText
-  posts_counter: 1
+  name: 'Lilly'
+  photo: 'https://img.freepik.com/free-photo/portrait-expressive-young-woman_1258-48167.jpg?w=740&t=st=1692885490~exp=1692886090~hmac=5b08761cf2c35c7bee71baa306e219242976590fff712feee2acedcb690ab414'
+  bio: 'bio 1'
+  posts_counter: 3
 
 two:
-  name: MyString
-  photo: MyString
-  bio: MyText
-  posts_counter: 1
+  name: 'Tom'
+  photo: 'https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?w=740&t=st=1692886351~exp=1692886951~hmac=6f8e18a232376e5e9b731d540be6fd84cc86a5c96c0643b7885b943cd34960cf'
+  bio: 'bio 2'
+  posts_counter: 4

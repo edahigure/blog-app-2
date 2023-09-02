@@ -1,0 +1,33 @@
+<h1>This is users page <%=@user.name%></h1>
+
+<div class="wrapper-1">
+<li class="item">  
+<img class="photo" src="<%= @user.photo%>" alt="user photo">
+<div class= "container"> 
+   <div class="name"> <%= @user.name %> </div>
+   <div class="post-num"> number of posts: <%= @user.posts_counter %></div>
+</div>
+</li>
+
+<div class="container-column-2"> 
+<div class="bio"> Bio </div>
+ <%= @user.bio %>
+</div>
+
+<% @posts.each do |post| %>
+    <div class= "container-column-2"> 
+        <div class="item">Post # <%= post.id %> <%= link_to post.title, user_post_path(post.author_id,post.id) %> </div>
+        <div class="item"> <%= post.text %> </div>
+
+        <div class="container-2">               
+          <div> <%= link_to 'Comments:', new_user_post_comment_url(post.author_id,post.id) %> : <%= post.comments_counter || 0 %> </div>
+          <div>  <%= link_to 'Likes', user_post_likes_path(post.author_id,post.id) %> : <%= post.likes_counter || 0 %> </div>
+        </div>
+    </div>
+<% end %>
+
+
+
+<%= link_to "See all posts", user_posts_path(@user), class: "button" %>
+  
+</end>

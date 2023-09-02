@@ -1,0 +1,34 @@
+<h1> This is posts page index .. <% @current_user %> </h1>
+
+
+<div class="wrapper-1">
+    <li class="item">  
+       <img class="photo" src="<%= @user.photo%>" alt="user photo">
+       <div class= "container"> 
+          <div class="name"> <%= @user.name %> </div>
+          <div class="post-num"> number of posts: <%= @user.posts_counter %></div>
+       </div>
+    </li>
+  
+    <% @posts.each do |post| %>
+      <div class= "container-column-2"> 
+          <div class="item">Post # <%= post.id %> <%= link_to post.title, user_post_path(post.author_id,post.id) %> </div>
+          <div class="item"> <%= post.text %> </div>
+
+          <div class="container-2">               
+            <div><%= link_to 'comments:', new_user_post_comment_url(post.author_id,post.id) %>  <%= post.comments_counter %> </div>
+            <div><%= link_to 'Likes', user_post_likes_path(post.author_id,post.id) %> : <%= post.likes_counter %> </div>
+          </div>
+      </div>
+  
+      <div class= "container-column-2"> 
+        <% com =  @comments.includes(:author).where(post_id: post.id) %>
+        <% if com!= nil  %>
+            <% com.each do |comment|  %>
+            <div> <%= comment.author.name %>:  <%= comment.text %> </div>
+            <% end %>
+        <% end %>        
+      </div>
+    <% end %>
+    <button type="button" class="button-1">Pagination</button>
+</end>

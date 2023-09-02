@@ -1,0 +1,52 @@
+<h1> This is Post page ..<%= @id %> </h1>
+
+
+<div class="wrapper-1">
+
+  
+      <div class= "container-column-2"> 
+          <div class="container-3">
+            <div>
+              Post: <%= @post.title %>  by  <%=@users.find( @post.author_id ).name %> 
+            </div>
+
+            <div class="container-2">               
+              <div>Comments: <%= @post.comments_counter %> </div>
+              <div>likes: <%= @post.likes_counter %> </div>
+            </div>
+
+          </div>
+          <div class="item"> <%= @post.text %> </div>
+          <% if can? :destroy, @post %>
+
+          <%= button_to(
+            "Delete Post",
+            user_post_path(@post.id),
+            method: :delete
+          ) %>
+          
+          <%end%>
+          
+      </div>
+  
+      <div class= "container-column-2"> 
+        <% com =  @comments.includes(:author).where(post_id: @id) %>
+        <% if com!= nil  %>
+            <% com.each do |comment|  %>
+            <div> <%= comment.author.name %>:  <%= comment.text %> 
+              <% if can? :destroy, comment %>        
+
+              <%= button_to(
+                "Delete",
+                user_post_comment_path(current_user.id,@id,comment.id),
+                method: :delete
+              ) %>
+              
+              <%end%>
+            </div>
+
+            <% end %>
+        <% end %>        
+      </div>
+   
+</end>

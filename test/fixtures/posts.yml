@@ -1,13 +1,26 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  text: MyText
+  title: 'Post 1'
+  text: 'My post-1'
   likes_counter: 1
   comments_counter: 1
 
 two:
-  title: MyString
-  text: MyText
+  title: 'Post 2'
+  text: 'My post-2'
   likes_counter: 1
   comments_counter: 1
+
+three:
+  title: 'Post 3'
+  text: 'My post-3'
+  likes_counter: 1
+  comments_counter: 1
+
+four:
+  title: 'Post 4'
+  text: 'My post-4'
+  likes_counter: 1
+  comments_counter: 1
+

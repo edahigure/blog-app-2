@@ -1,0 +1,176 @@
+rails generate model User name:string photo:string bio:text posts_counter:integer 
+rails generate model Post title:string text:text likes_counter:integer comments_counter:integer 
+rails generate model Comment user:references:index post:references:index text:text 
+rails generate model Like user:references:index post:references:index 
+
+
+
+rails generate migration AddAuthorRefToPosts author:references
+rails generate migration AddAuthorToPosts author:string:index
+
+
+rails g migration RenameColumnName
+
+
+
+
+
+first_user = User.create(name: 'Tom', photo: 'https://www.freepik.com/free-photo/close-up-portrait-curly-handsome-european-male_8757475.htm#query=people%20face%20man&position=14&from_view=search&track=ais', bio: 'Teacher from Mexico.')
+
+second_user = User.create(name: 'Lilly', photo: 'https://img.freepik.com/free-photo/portrait-expressive-young-woman_1258-48167.jpg?w=740&t=st=1692885490~exp=1692886090~hmac=5b08761cf2c35c7bee71baa306e219242976590fff712feee2acedcb690ab414', bio: 'Teacher from Poland.')
+
+third_user = User.create(name: 'John', photo: 'https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?w=740&t=st=1693421639~exp=1693422239~hmac=f4525ba37b35e0ce84e82b741aa1e436d5c0d94b673e6fb20314aa2a4ecee8ac', bio: 'Teacher from Argentina.')
+
+fourth_user = User.create(name: ‘Miriam’, photo: 'https://img.freepik.com/free-photo/young-beautiful-woman-looking-camera-trendy-girl-casual-summer-white-t-shirt-jeans-shorts-positive-female-shows-facial-emotions-funny-model-isolated-yellow_158538-15796.jpg?w=740&t=st=1692894104~exp=1692894704~hmac=75337d2cd670ca6ecf45532673df587947441acfb64c89d9b2f04f8ae616fc10', bio: 'Teacher from Colombia.’)
+
+first_post = Post.create(author: first_user, title: 'Hello', text: 'This is my first post')
+second_post = Post.create(author: second_user, title: 'Hello-2', text: 'This is my second post')
+third_post = Post.create(author: third_user, title: 'Hello-3', text: 'This is my third post')
+fourth_post = Post.create(author: first_user, title: 'Hello-4', text: 'This is my fourth post')
+
+
+Comment.create(post: first_post, author: second_user, text: 'Hi Tom!' )
+Comment.create(post: first_post, author: third_user, text: 'How are You!' )
+
+User.recent_posts
+
+first_user=User.find(11)
+second_user=User.find(12)
+third_user=User.find(13)
+
+
+
+
+
+
+
+
+it 'can show the right content' do
+      
+      expect(page).to have_content('This is users page Lilly')
+    end
+
+    it 'can see the photo of all other users' do
+      
+      find("img[src='#{user.photo}']")
+    end
+
+    it 'can see the post number for user one' do
+      
+      expect(page).to have_content(user.posts_counter)      
+    end
+
+    it 'can see the user one bio.' do
+      
+      expect(page).to have_content(user.bio)      
+    end
+
+    it 'can see the user first three posts' do
+      
+      last_post=user.recent_posts
+      last_post.each do |post|
+         expect(page).to have_content(post.title)      
+      end
+    end
+
+   it 'can see the user first three posts' do
+      visit user_path(user)
+      last_post=user.recent_posts
+      last_post.each do |post|
+         expect(page).to have_content(post.title)      
+      end
+    end
+
+    it 'can see a button that lets me view all of a user\'s posts' do
+      
+      expect(page).to have_selector(:link_or_button, 'See all posts')
+    end
+
+
+it "When I click to see all posts, it redirects me to the user's post's index page" do
+  
+      click_on 'See all posts'
+      expect(current_path).to eq(user_posts_path(user))
+    end
+
+
+ it 'redirects me to that post\'s show page, When I click a user\'s post ' do
+      visit user_path(user)
+
+      click_on post_1.title
+
+      sleep(3)
+      expect(current_path).to eq(user_post_path(user,post_1.id))
+
+    end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ it 'can see the photo of all other users' do
+      
+      find("img[src='#{user.photo}']")
+    end
+
+    it 'can see the post number for user one' do
+      
+      expect(page).to have_content(user.posts_counter)      
+    end
+
+    it 'can see the user one bio.' do
+      
+      expect(page).to have_content(user.bio)      
+    end
+
+    it 'can see the user first three posts' do
+      
+      last_post=user.recent_posts
+      last_post.each do |post|
+         expect(page).to have_content(post.title)      
+      end
+    end
+
+   it 'can see the user first three posts' do
+      
+      last_post=user.recent_posts
+      last_post.each do |post|
+         expect(page).to have_content(post.title)      
+      end
+    end
+
+    it 'can see a button that lets me view all of a user\'s posts' do
+      
+      expect(page).to have_selector(:link_or_button, 'See all posts')
+    end
+
+
+    it "When I click to see all posts, it redirects me to the user's post's index page" do
+  
+      click_on 'See all posts'
+      expect(current_path).to eq(user_posts_path(user))
+    end
+
+  
+    it 'redirects me to that post\'s show page, When I click a user\'s post ' do
+      
+      first_post = user.recent_posts.first
+      
+      find("a[href='#{user_post_path(user.id, first_post.id)}']").click
+      
+      expect(page).to have_current_path(user_post_path(user, first_post))
+      
+
+    end  
