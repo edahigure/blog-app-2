@@ -17,7 +17,15 @@
 
           </div>
           <div class="item"> <%= @post.text %> </div>
+          <% if can? :destroy, @post %>
 
+          <%= button_to(
+            "Delete Post",
+            user_post_path(@post.id),
+            method: :delete
+          ) %>
+          
+          <%end%>
           
       </div>
   
@@ -25,7 +33,18 @@
         <% com =  @comments.includes(:author).where(post_id: @id) %>
         <% if com!= nil  %>
             <% com.each do |comment|  %>
-            <div> <%= comment.author.name %>:  <%= comment.text %> </div>
+            <div> <%= comment.author.name %>:  <%= comment.text %> 
+              <% if can? :destroy, comment %>        
+
+              <%= button_to(
+                "Delete",
+                user_post_comment_path(current_user.id,@id,comment.id),
+                method: :delete
+              ) %>
+              
+              <%end%>
+            </div>
+
             <% end %>
         <% end %>        
       </div>
