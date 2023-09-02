@@ -134,6 +134,19 @@ To run the project, execute the following command:
 
   rails server
 
+and put the url of your localhost
+
+For using it as an API endpoint you may use Postman with the following routes:
+
+- To list all posts for a user
+GET http://127.0.0.1:3000/api/v1/users/:id/posts
+- To list all comments for a user's post.
+GET http://127.0.0.1:3000/api/v1/users/:id/posts/:id/comments
+- To add a comment to a post.
+POST http://127.0.0.1:3000/api/v1/users/:id/posts/:id/comments
+
+
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- AUTHOR -->
 
